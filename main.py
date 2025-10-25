@@ -123,6 +123,8 @@ async def repeat(ctx, mode: str = None):
 @bot.command()
 async def rickroll(ctx):
     await play(ctx, search="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-load_dotenv() 
+load_dotenv()  # carrega as variáveis do .env
 TOKEN = os.getenv("DISCORD_TOKEN")
+
+print(TOKEN)  # teste se imprime o token
 bot.run(TOKEN)
