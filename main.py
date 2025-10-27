@@ -27,10 +27,10 @@ async def play_next(ctx):
     vc = ctx.voice_client
 
     if repeat_song.get(guild_id):
-        # repete a mesma música
+       
         queue.insert(0, queue[0])
     elif repeat_queue.get(guild_id) and len(queue) == 0:
-        # reinicia a playlist
+       
         queue[:] = repeat_queue[guild_id].copy()
 
     if len(queue) > 0:
@@ -123,8 +123,8 @@ async def repeat(ctx, mode: str = None):
 @bot.command()
 async def rickroll(ctx):
     await play(ctx, search="https://www.youtube.com/watch?v=dQw4w9WgXcQ")
-load_dotenv()  # carrega as variáveis do .env
+load_dotenv() 
 TOKEN = os.getenv("DISCORD_TOKEN")
 
-print(TOKEN)  # teste se imprime o token
+print(TOKEN)  
 bot.run(TOKEN)
